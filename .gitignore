@@ -1,0 +1,4 @@
+java-version/target/*
+target/*
+java-version/resources/solution-cache/*
+solution-cache/*

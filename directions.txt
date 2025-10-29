@@ -1,0 +1,38 @@
+In this project you will implement a basic set multiplication algorithm and use it in a piece for cello and fixed media.
+
+To get a general sense of what we are implementing which this video:
+In the video, the process is done by hand. We will automate the processes and control musical parameters such as density, amplitude, and register using envelopes or other functions of time.
+
+Java Version
+1. Copy the following dependencies from the Stepwise-Voice-Leading exercise into the java-version/src/main/java/org/delightofcomposition/voiceleading directory of the current project:
+Directed.java
+NoCommons.java
+NoCommonsDirected.java
+VoiceLeadingFramework.java
+VoiceLeading.java
+
+2. Consult java-version/src/main/java/org/delightofcomposition/Multiplication.java for directions on what to implement
+
+3. In the delightofcomposition directory, create the file SetMultiplication.java
+
+4. Add the imports.
+import java.util.ArrayList;
+import java.util.Random;
+
+5. Make it extend Multiplication.java.
+public class SetMultiplication extends Multiplication{
+
+6. Once you've finished implementing, execute main.java either using vscode or raw maven. Within the java-version directory:
+Mvn clean compile exec:java
+
+7. This should produce a file called composition.wav in the top level directory. Listen to it. Now adjust the envelopes.
+Env 1 - Range
+Env 2 - Amplitude
+Env 3 - Density
+Env 4 - Pan
+Run the envelope gui:
+java -jar ./src/main/java/org/delightofcomposition/envelopes/EnvGui.jar
+
+9. If you finish early, feel free to experiment with alternative functions to control various parameters, or explore generating rhythmic cycles. Frameworks for such experiments may be found in java-version/src/main/java/org/delightofcomposition/simpleparams
+
+10. Compose a brief work for cello and fixed media using the process you've just built.

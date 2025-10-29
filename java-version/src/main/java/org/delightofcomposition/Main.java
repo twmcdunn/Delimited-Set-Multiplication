@@ -15,21 +15,31 @@ import org.delightofcomposition.util.ProgressBar;
 
 public class Main {
     public static void main(String[] args) {
-        int[][] harmonicCells = new int[][] { { 0, 4, 7, 11 }, { 0, 6, 7, 11 } };
-        Multiplication m = new SetMultiplication(harmonicCells[0], harmonicCells[1]);
 
-        // use the octatatonic scale, with 4-note chords, depth 3
+        // modify these
+        int[] scale = new int[] { 0, 1, 3, 4, 6, 7, 9, 10 };// ocatonic default
+        int chordCardinality = 4;// in itself, not a salient parameter to play with
+        int depth = 3;// effects the length of the output (which isn't strictly predictable)
+        
+        // by default, this uses the octatatonic scale, with 4-note chords, depth 3
         // the length of the progression is unpredictable due to uneven nesting (see
         // note in Multiplication.compose)
-        ArrayList<int[]> chords = m.compose(new int[] { 0, 1, 3, 4, 6, 7, 9, 10 }, 4, 3);
+        
+        SimpleSynth synth = new SimpleSynth();
+        //synth.origFreq = 394;
 
-        // for targeted voice-leading (depends on an envelope) follow this pattern
-        generateComposition(chords, 0.05, new SimpleSynth(), new VoiceLeading()::uncommonDirectedVoiceLeading);
+
+
+        // comment these lines in when you've finished implementing
+        //Multiplication m = new SetMultiplication();
+        // ArrayList<int[]> chords = m.compose(scale, chordCardinality, depth);
+        // generateComposition(chords, 0.05, synth, new
+        // VoiceLeading()::uncommonDirectedVoiceLeading);
 
         // for non-targeted voice-leading (doesn't depend on an envelope) follow this
         // pattern
         // VoiceLeading vl = new VoiceLeading();
-        // generateComposition(chords, 0.05, new SimpleSynth(), (fc, sc, t) ->
+        // generateComposition(chords, 0.05, synth, (fc, sc, t) ->
         // vl.stepwiseVoiceLeading(fc, sc));
 
     }
